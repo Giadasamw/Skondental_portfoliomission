@@ -1,4 +1,4 @@
-import { Fragment_Mono, Inter, Newsreader } from "next/font/google";
+import { Fragment_Mono, Host_Grotesk, Newsreader } from "next/font/google";
 
 /**
  * Design system font stacks.
@@ -9,7 +9,7 @@ import { Fragment_Mono, Inter, Newsreader } from "next/font/google";
  * requires changing the loader here — every consumer reads the CSS variable.
  *
  *   Financier Display  →  Newsreader     (--font-financier-display-face)
- *   Ftbase             →  Inter          (--font-ftbase-face)
+ *   Ftbase             →  Host Grotesk   (--font-ftbase-face)
  *   Fragment mono      →  Fragment Mono  (--font-fragment-mono-face)
  *
  * The `-face` variables carry the loaded substitute only. globals.css composes
@@ -27,7 +27,7 @@ export const financierDisplay = Newsreader({
 });
 
 /** Humanist sans for body, navigation, buttons and every UI label. */
-export const ftbase = Inter({
+export const ftbase = Host_Grotesk({
   variable: "--font-ftbase-face",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],

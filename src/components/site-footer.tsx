@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const QUICK_LINKS = [
   { label: "Home", href: "#top" },
   { label: "About Us", href: "#about" },
@@ -62,9 +64,15 @@ export function SiteFooter() {
     <footer className="bg-aged-paper px-4 pb-4 md:px-6">
       <div className="page-container rounded-t-card bg-parchment px-6 pt-12 pb-8 md:px-16 md:pt-20 md:pb-10">
         {/* Top row — logo */}
-        <p className="text-heading font-financier-display text-terracotta-seal">
-          SKŌN DENTAL
-        </p>
+        <a href="#top" className="inline-flex items-center" aria-label="SKŌN Dental home">
+          <Image
+            src="/images/skon-dental-logo.png"
+            alt="SKŌN Dental"
+            width={180}
+            height={68}
+            className="h-12 w-auto md:h-14"
+          />
+        </a>
 
         {/* Body — 3 blocks */}
         <div className="mt-10 grid grid-cols-1 gap-10 md:mt-12 md:grid-cols-3 md:gap-12">

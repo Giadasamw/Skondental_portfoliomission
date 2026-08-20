@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 type Step = {
-  eyebrow: string;
   title: string;
   guide: string;
   subhead: string;
@@ -13,33 +12,32 @@ type Step = {
    The base layer applies fill:none + stroke:currentColor to inline svg,
    so colour comes from text-terracotta-seal and we only set stroke width. */
 const AlignerArch = (
-  <svg viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M4 6c0 7 3.6 12 8 12s8-5 8-12" />
-    <path d="M7 6c0 5 2.2 8.6 5 8.6s5-3.6 5-8.6" />
-    <path d="M9.5 6.4v2.6M12 6.2v3M14.5 6.4v2.6" />
+  <svg viewBox="0 0 32 32" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6 9c0 9 4.5 15 10 15s10-6 10-15" />
+    <path d="M9.5 9.5c1.8-1.2 4-1.8 6.5-1.8s4.7.6 6.5 1.8" />
+    <path d="M12 10.2v3.2M16 9.9v3.6M20 10.2v3.2" />
   </svg>
 );
 
 const Sparkle = (
-  <svg viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M10 3c.4 3.7 1.5 4.8 5.2 5.2C11.5 8.6 10.4 9.7 10 13.4c-.4-3.7-1.5-4.8-5.2-5.2C8.5 7.8 9.6 6.7 10 3z" />
-    <path d="M17.5 12.5c.2 1.6.7 2.1 2.3 2.3-1.6.2-2.1.7-2.3 2.3-.2-1.6-.7-2.1-2.3-2.3 1.6-.2 2.1-.7 2.3-2.3z" />
+  <svg viewBox="0 0 32 32" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M13 5c.5 5 2 6.5 7 7-5 .5-6.5 2-7 7-.5-5-2-6.5-7-7 5-.5 6.5-2 7-7z" />
+    <path d="M23 18c.25 2.4 1 3.15 3.4 3.4-2.4.25-3.15 1-3.4 3.4-.25-2.4-1-3.15-3.4-3.4 2.4-.25 3.15-1 3.4-3.4z" />
   </svg>
 );
 
 const VeneerGem = (
-  <svg viewBox="0 0 24 24" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M7 3.5h10l4 5.5L12 21 3 9z" />
-    <path d="M3 9h18" />
-    <path d="M7 3.5 9.6 9 12 21" />
-    <path d="M17 3.5 14.4 9 12 21" />
-    <path d="M9.6 9 12 3.5 14.4 9" />
+  <svg viewBox="0 0 32 32" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M9.5 5.5h13l4.5 6L16 27 5 11.5z" />
+    <path d="M5 11.5h22" />
+    <path d="M9.5 5.5 12.5 11.5 16 27" />
+    <path d="M22.5 5.5 19.5 11.5 16 27" />
+    <path d="M12.5 11.5 16 5.5 19.5 11.5" />
   </svg>
 );
 
 const STEPS: Step[] = [
   {
-    eyebrow: "A",
     title: "Align",
     guide: "The starting point of every confident smile.",
     subhead: "Treatment options:",
@@ -50,7 +48,6 @@ const STEPS: Step[] = [
     icon: AlignerArch,
   },
   {
-    eyebrow: "B",
     title: "Brighten",
     guide: "Uncover your natural brilliance.",
     subhead: "Whitening options include:",
@@ -62,7 +59,6 @@ const STEPS: Step[] = [
     icon: Sparkle,
   },
   {
-    eyebrow: "C",
     title: "Contour",
     guide: "Polish. Perfect. Personalise.",
     subhead: "Finishing techniques:",
@@ -96,19 +92,15 @@ export function AbcConcept() {
         <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {STEPS.map((step) => (
             <li key={step.title} className="h-full">
-              <article className="rounded-card border-warm-taupe bg-aged-paper flex h-full flex-col border p-card-lg">
-                <span className="text-terracotta-seal [&_svg]:h-9 [&_svg]:w-9">
+              <article className="rounded-card bg-aged-paper flex h-full flex-col p-card-lg">
+                <span className="text-terracotta-seal [&_svg]:h-10 [&_svg]:w-10">
                   {step.icon}
                 </span>
 
-                <div className="mt-6 flex items-baseline gap-3">
-                  <span className="text-eyebrow text-terracotta-seal font-fragment-mono font-medium uppercase tracking-[0.28em]">
-                    {step.eyebrow}
-                  </span>
-                  <h3 className="text-subheading text-ink font-ftbase font-semibold uppercase tracking-[0.14em]">
-                    {step.title}
-                  </h3>
-                </div>
+                <h3 className="text-subheading text-ink mt-6 font-ftbase font-semibold uppercase tracking-normal">
+                  <span className="text-terracotta-seal">{step.title.charAt(0)}</span>
+                  {step.title.slice(1)}
+                </h3>
 
                 <p className="text-body text-charcoal mt-3">{step.guide}</p>
 
@@ -116,7 +108,7 @@ export function AbcConcept() {
                   {step.subhead}
                 </p>
                 <ul className="mt-3 flex flex-col gap-3">
-                  {step.options.map((option) => (
+                  {step.options.slice(0, 2).map((option) => (
                     <li
                       key={option}
                       className="text-body-sm text-graphite flex gap-3 border-t border-warm-taupe/60 pt-3 first:border-t-0 first:pt-0"

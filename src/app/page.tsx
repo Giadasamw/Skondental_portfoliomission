@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section";
 import { PopularTreatments } from "@/components/popular-treatments";
 import { AbcConcept } from "@/components/abc-concept";
+import { WhyChoose } from "@/components/why-choose";
 import { FaqSection } from "@/components/faq-section";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <PopularTreatments />
       <AbcConcept />
+      <WhyChoose />
       <FaqSection />
     </main>
   );

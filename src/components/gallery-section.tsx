@@ -9,7 +9,7 @@ type GalleryImage = {
 const IMAGES: GalleryImage[] = [
   {
     src: "/gallery/galleryphoto1.webp",
-    alt: "Skon Dental reception with a terracotta sofa beneath the illuminated round logo",
+    alt: "Skōn Dental reception with a terracotta sofa beneath the illuminated round logo",
   },
   {
     src: "/gallery/galleryphoto2.jpg",
@@ -25,7 +25,7 @@ const IMAGES: GalleryImage[] = [
   },
   {
     src: "/gallery/galleryphoto5.webp",
-    alt: "Skon Dental shopfront at dusk with the illuminated hanging sign",
+    alt: "Skōn Dental shopfront at dusk with the illuminated hanging sign",
   },
   {
     src: "/gallery/galleryphoto6.jpg",
@@ -38,7 +38,7 @@ export function GallerySection() {
     <section id="gallery" className="bg-parchment py-section-lg">
       <div className="page-container">
         <h2 className="text-heading-lg text-ink text-center font-financier-display text-balance">
-          Inside <em>Skon</em>
+          Inside <em>Skōn</em>
         </h2>
       </div>
 

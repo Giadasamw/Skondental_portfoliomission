@@ -24,14 +24,14 @@ const REVIEWS: Review[] = [
     date: "1 mese fa",
     rating: 5,
     text:
-      "I'm so happy with my composite veneers from Skon Dental! The whole team was friendly, professional, and made me feel comfortable throughout. My veneers look so natural, and I couldn't be happier with the results. I would definitely recommend Skon Dental to anyone looking to transform their smile!",
+      "I'm so happy with my composite veneers from Skōn Dental! The whole team was friendly, professional, and made me feel comfortable throughout. My veneers look so natural, and I couldn't be happier with the results. I would definitely recommend Skōn Dental to anyone looking to transform their smile!",
   },
   {
     name: "Leon Cliff",
     date: "1 mese fa",
     rating: 5,
     text:
-      "I cannot describe how good this experience was. I needed to get some porcelain veneers for my wedding and picking SKON Dental was the best decision I've made. It made me feel so much more confident smiling at the wedding and in the photos. The team are 10/10 and as far as I'm concerned artists with the level of detail and attention they put into everything. They were also super responsive on WhatsApp. This will be my go-to dentist from now on.",
+      "I cannot describe how good this experience was. I needed to get some porcelain veneers for my wedding and picking SKŌN Dental was the best decision I've made. It made me feel so much more confident smiling at the wedding and in the photos. The team are 10/10 and as far as I'm concerned artists with the level of detail and attention they put into everything. They were also super responsive on WhatsApp. This will be my go-to dentist from now on.",
   },
   {
     name: "Marian K",

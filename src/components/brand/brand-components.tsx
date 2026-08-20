@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SheetRow, CardLabel } from "./sheet-primitives";
 
 /* ---------- Outlined icon set (1.5px stroke, currentColor) ------------- */
 function ToothIcon() {
@@ -46,64 +46,16 @@ function ShieldIcon() {
   );
 }
 
-const ICONS = [
-  { Icon: ToothIcon, label: "Treatment" },
-  { Icon: CalendarIcon, label: "Booking" },
-  { Icon: StarIcon, label: "Reviews" },
-  { Icon: SparkleIcon, label: "Whitening" },
-  { Icon: PhoneIcon, label: "Contact" },
-  { Icon: ShieldIcon, label: "Guarantee" },
-];
-
-const GALLERY = [
-  { src: "/gallery/galleryphoto2.jpg", alt: "Patient smiling in sunlight" },
-  { src: "/gallery/galleryphoto4.jpg", alt: "Patient in an orange sweater smiling" },
-  { src: "/gallery/galleryphoto6.jpg", alt: "Patient smiling outdoors" },
-];
-
-function SubBlock({
-  eyebrow,
-  title,
-  children,
-}: {
-  eyebrow: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex flex-col gap-5 rounded-card border border-warm-taupe bg-aged-paper p-card md:p-card-lg">
-      <div className="flex flex-col gap-1">
-        <span className="text-eyebrow font-fragment-mono uppercase tracking-[0.14em] text-terracotta-seal">
-          {eyebrow}
-        </span>
-        <h3 className="text-heading font-financier-display text-ink">{title}</h3>
-      </div>
-      {children}
-    </div>
-  );
-}
+const ICONS = [ToothIcon, CalendarIcon, StarIcon, SparkleIcon, PhoneIcon, ShieldIcon];
 
 export function BrandComponents() {
   return (
-    <section className="bg-parchment">
-      <div className="page-container py-section-lg">
-        <div className="flex flex-col gap-4">
-          <span className="text-eyebrow font-fragment-mono uppercase tracking-[0.18em] text-terracotta-seal">
-            Components
-          </span>
-          <h2 className="text-heading-lg font-financier-display text-ink text-balance">
-            The <em>building blocks</em>
-          </h2>
-          <p className="max-w-prose text-body-lg text-graphite text-pretty">
-            A fixed shape family keeps everything coherent: 40px buttons, 24px
-            cards, pill inputs, and outlined icons. Here is the kit in use.
-          </p>
-        </div>
-
-        <div className="mt-10 flex flex-col gap-4">
-          {/* Buttons */}
-          <SubBlock eyebrow="Buttons" title="Pill-soft, 40px radius">
-            <div className="flex flex-wrap items-center gap-4">
+    <SheetRow label="Components">
+      <div className="grid gap-4 lg:grid-cols-2">
+        {/* Buttons */}
+        <div className="flex flex-col overflow-hidden rounded-card border border-warm-taupe bg-aged-paper">
+          <div className="flex flex-1 flex-col gap-5 p-card">
+            <div className="flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 className="rounded-button bg-terracotta-seal px-6 py-3 text-body-sm font-semibold text-parchment transition-opacity hover:opacity-90"
@@ -114,7 +66,7 @@ export function BrandComponents() {
                 type="button"
                 className="rounded-button border border-terracotta-seal px-6 py-3 text-body-sm font-semibold text-terracotta-seal transition-colors hover:bg-terracotta-seal hover:text-parchment"
               >
-                View Treatments
+                Treatments
               </button>
               <button
                 type="button"
@@ -123,7 +75,7 @@ export function BrandComponents() {
                 Learn more
               </button>
             </div>
-            <div className="flex flex-wrap items-center gap-3 border-t border-warm-taupe pt-5">
+            <div className="flex flex-wrap items-center gap-3">
               {["Composite Bonding", "Whitening", "Invisalign"].map((tag) => (
                 <span
                   key={tag}
@@ -133,73 +85,56 @@ export function BrandComponents() {
                 </span>
               ))}
             </div>
-          </SubBlock>
-
-          <div className="grid gap-4 lg:grid-cols-2">
-            {/* Cards */}
-            <SubBlock eyebrow="Cards" title="Surface, outline, radius">
-              <div className="flex flex-col gap-4">
-                <article className="flex flex-col gap-3 rounded-card border border-warm-taupe bg-parchment p-card">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-pill bg-terracotta-seal/10 text-terracotta-seal">
-                    <SparkleIcon />
-                  </span>
-                  <h4 className="text-subheading font-financier-display text-ink">
-                    Teeth Whitening
-                  </h4>
-                  <p className="text-body-sm text-graphite text-pretty">
-                    A brighter, natural-looking smile in a single calm visit.
-                  </p>
-                </article>
-                <article className="flex items-center gap-4 rounded-card border border-warm-taupe bg-parchment p-card">
-                  <div className="flex text-terracotta-seal">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <StarIcon key={i} />
-                    ))}
-                  </div>
-                  <p className="text-body-sm text-graphite text-pretty">
-                    &ldquo;Genuinely the calmest dentist I have ever been to.&rdquo;
-                  </p>
-                </article>
-              </div>
-            </SubBlock>
-
-            {/* Icons */}
-            <SubBlock eyebrow="Icons" title="Outlined, never filled">
-              <div className="grid grid-cols-3 gap-3">
-                {ICONS.map(({ Icon, label }) => (
-                  <div
-                    key={label}
-                    className="flex flex-col items-center gap-2 rounded-card border border-warm-taupe bg-parchment px-2 py-5 text-terracotta-seal"
-                  >
-                    <Icon />
-                    <span className="text-eyebrow text-graphite">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </SubBlock>
           </div>
+          <CardLabel>Buttons &amp; pills</CardLabel>
+        </div>
 
-          {/* Gallery */}
-          <SubBlock eyebrow="Gallery" title="Portrait, snap-scrolling">
-            <div className="-mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2">
-              {GALLERY.map((img) => (
-                <div
-                  key={img.src}
-                  className="relative aspect-[3/4] w-40 shrink-0 snap-start overflow-hidden rounded-card border border-warm-taupe sm:w-48"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 640px) 40vw, 12rem"
-                    className="object-cover"
-                  />
-                </div>
+        {/* Icons */}
+        <div className="flex flex-col overflow-hidden rounded-card border border-warm-taupe bg-aged-paper">
+          <div className="grid flex-1 grid-cols-3 gap-3 p-card">
+            {ICONS.map((Icon, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center rounded-card border border-warm-taupe bg-parchment py-5 text-terracotta-seal"
+              >
+                <Icon />
+              </div>
+            ))}
+          </div>
+          <CardLabel>Icons</CardLabel>
+        </div>
+
+        {/* Card — treatment */}
+        <div className="flex flex-col overflow-hidden rounded-card border border-warm-taupe bg-aged-paper">
+          <div className="flex flex-1 flex-col gap-3 p-card">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-pill bg-terracotta-seal/10 text-terracotta-seal">
+              <SparkleIcon />
+            </span>
+            <h4 className="text-subheading font-financier-display text-ink">
+              Teeth Whitening
+            </h4>
+            <p className="text-body-sm text-graphite text-pretty">
+              A brighter, natural-looking smile in a single calm visit.
+            </p>
+          </div>
+          <CardLabel>Card</CardLabel>
+        </div>
+
+        {/* Card — review */}
+        <div className="flex flex-col overflow-hidden rounded-card border border-warm-taupe bg-aged-paper">
+          <div className="flex flex-1 flex-col justify-center gap-3 p-card">
+            <div className="flex text-terracotta-seal">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <StarIcon key={i} />
               ))}
             </div>
-          </SubBlock>
+            <p className="text-body text-graphite text-pretty">
+              &ldquo;Genuinely the calmest dentist I have ever been to.&rdquo;
+            </p>
+          </div>
+          <CardLabel>Review card</CardLabel>
         </div>
       </div>
-    </section>
+    </SheetRow>
   );
 }

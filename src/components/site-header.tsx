@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Composite Bonding", href: "#composite-bonding" },
@@ -79,12 +80,12 @@ export function SiteHeader() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
-          <a
-            href="#book"
+          <Link
+            href="/brand"
             className="hidden rounded-button bg-terracotta-seal px-5 py-2.5 text-body-sm font-semibold text-parchment transition-opacity hover:opacity-90 sm:inline-flex"
           >
             Book Online
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -119,13 +120,13 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <a
-            href="#book"
+          <Link
+            href="/brand"
             onClick={() => setMobileOpen(false)}
             className="mt-3 flex w-full items-center justify-center rounded-button bg-terracotta-seal px-5 py-3 text-body font-semibold text-parchment"
           >
             Book Online
-          </a>
+          </Link>
         </div>
       ) : null}
     </header>

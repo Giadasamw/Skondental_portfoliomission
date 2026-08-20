@@ -5,6 +5,8 @@ import { WhyChoose } from "@/components/why-choose";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { FaqSection } from "@/components/faq-section";
 import { GallerySection } from "@/components/gallery-section";
+import { FinalCta } from "@/components/final-cta";
+import { SiteFooter } from "@/components/site-footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <FaqSection />
       <TestimonialsSection />
       <GallerySection />
+      <FinalCta />
+      <SiteFooter />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 export function FinalCta() {
   return (
     <section className="bg-aged-paper">
-      <div className="page-container flex flex-col items-center py-20 text-center md:py-[120px]">
+      <div className="page-container flex flex-col items-center py-section text-center md:py-section-lg">
         <h2 className="text-display text-ink font-financier-display text-balance max-w-[14ch]">
           Smile like you <em className="text-terracotta-seal">mean</em> it.
         </h2>

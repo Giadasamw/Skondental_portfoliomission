@@ -59,8 +59,8 @@ const CONTACT = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-parchment px-4 pb-4 md:px-6">
-      <div className="page-container rounded-t-[32px] bg-aged-paper px-6 pt-12 pb-8 md:px-16 md:pt-20 md:pb-10">
+    <footer className="bg-aged-paper px-4 pb-4 md:px-6">
+      <div className="page-container rounded-t-card bg-parchment px-6 pt-12 pb-8 md:px-16 md:pt-20 md:pb-10">
         {/* Top row — logo */}
         <p className="text-heading font-financier-display text-terracotta-seal">
           SKŌN DENTAL
@@ -121,7 +121,7 @@ export function SiteFooter() {
                 id="footer-email"
                 type="email"
                 placeholder="Email"
-                className="rounded-xl border border-ash bg-parchment px-3.5 py-3 text-body-sm text-ink placeholder:text-graphite"
+                className="rounded-pill border border-ash bg-parchment px-5 py-3 text-body-sm text-ink placeholder:text-graphite"
               />
               <label className="sr-only" htmlFor="footer-message">
                 Message
@@ -130,7 +130,7 @@ export function SiteFooter() {
                 id="footer-message"
                 rows={3}
                 placeholder="Message"
-                className="resize-none rounded-xl border border-ash bg-parchment px-3.5 py-3 text-body-sm text-ink placeholder:text-graphite"
+                className="resize-none rounded-card border border-ash bg-parchment px-5 py-3 text-body-sm text-ink placeholder:text-graphite"
               />
               <button
                 type="submit"
@@ -148,20 +148,20 @@ export function SiteFooter() {
             <a
               href="#facebook"
               aria-label="Facebook"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink text-ink transition-colors hover:border-terracotta-seal hover:text-terracotta-seal"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-pill border border-ink text-ink transition-colors hover:border-terracotta-seal hover:text-terracotta-seal"
             >
               <FacebookIcon />
             </a>
             <a
               href="#instagram"
               aria-label="Instagram"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink text-ink transition-colors hover:border-terracotta-seal hover:text-terracotta-seal"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-pill border border-ink text-ink transition-colors hover:border-terracotta-seal hover:text-terracotta-seal"
             >
               <InstagramIcon />
             </a>
           </div>
           <p className="text-body-sm text-graphite">
-            Copyright &copy; 2025 SKŌN Dental. All Rights Reserved.
+            Copyright &copy; 2026 SKŌN Dental. All Rights Reserved.
           </p>
         </div>
       </div>

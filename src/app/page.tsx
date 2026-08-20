@@ -4,6 +4,7 @@ import { AbcConcept } from "@/components/abc-concept";
 import { WhyChoose } from "@/components/why-choose";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { FaqSection } from "@/components/faq-section";
+import { GallerySection } from "@/components/gallery-section";
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
       <PopularTreatments />
       <AbcConcept />
       <WhyChoose />
-      <TestimonialsSection />
       <FaqSection />
+      <TestimonialsSection />
+      <GallerySection />
     </main>
   );
 }
